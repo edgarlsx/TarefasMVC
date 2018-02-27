@@ -1,0 +1,48 @@
+﻿@model TarefasMVC.Models.Tarefas
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Delete</h2>
+
+<h3>Vc tem certeza que deseja apagar o registro ?</h3>
+<div>
+    <h4>Tarefas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExecucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExecucao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>
